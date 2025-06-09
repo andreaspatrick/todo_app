@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Buku List</title>
+</head>
+<body>
+    <h1>Buku List</h1>
+    <form method="POST" action="/add">
+        <input type="text" name="task" placeholder="Tulis tugas baru" required>
+        <button type="submit">Tambah</button>
+    </form>
+
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task }} 
+                <a href="/delete/{{ loop.index0 }}">[Hapus]</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
